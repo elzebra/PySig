@@ -1,3 +1,9 @@
+#################################################################################################
+# https://sphincs.org/data/sphincs+-r3.1-specification.pdf
+# Section 5. FORS: Forest Of Random Subsets
+#################################################################################################
+
+
 import hashlib, random
 
 def XOR(x, y):
@@ -9,6 +15,7 @@ def XOR(x, y):
 #################################################################################################
 
 ## pp = [n, algo, robust, k, a]
+## only supports hash algorithm "shake"
 
 # SecretKey Generation
 def PRF(pp, secret_seed, public_seed, addr):
