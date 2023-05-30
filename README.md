@@ -3,12 +3,14 @@ signature shemes in python
 
 * pure python without any external dependencies
 * just copy and paste; no license
-* simple implementation for PoC not for performance
+* simple implementation for understanding not for performance
 
 ### SPHINCS+
 
-* https://sphincs.org/data/sphincs+-r3.1-specification.pdf
+* Specification: https://sphincs.org/data/sphincs+-r3.1-specification.pdf
+* Reference Implementation: https://github.com/sphincs/sphincsplus
 * Section 6. SPHINCS+
+* If you have found a pair of input and output which is not equal to that of the reference implementaion, please let me know.
 
 #### FORS
 
