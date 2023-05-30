@@ -1,7 +1,7 @@
 # PySig
 signature shemes in python
 
-* pure python without any external dependencies; 
+* pure python without any external dependencies
 * just copy and paste; no license
 * simple implementation for PoC not for performance
 
