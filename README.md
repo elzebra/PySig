@@ -31,7 +31,7 @@ print(len(public_root), public_root.hex())
 
 #16 9ab7a7b30bc9c6a8637a54caef3f9c27
 
-rand = bytes.fromhex("a2fac94d6e320ad83fc049c6ba21033b".replace(" ", ""))
+rand = bytes.fromhex("a2fac94d6e320ad83fc049c6ba21033b")
 msg = b"\xff"*32
 
 signature = SPHINCS_Sign(pp, secret_seed, public_seed, public_root, msg, rand)
