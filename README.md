@@ -39,7 +39,6 @@ signature = SPHINCS_Sign(pp, secret_seed, public_seed, public_root, msg, rand)
 #        RANDOM:                                           16 a2fac94d6e320ad83fc049c6ba21033b
 #Hashed Message:         6391030117691388          241     21 265dc48ab5c151e14d73ddc62ab3646a5e1474ca73
 #          FORS:                                           16 2f4db3d8172f2680e71f13e8b6dd3645
-#
 #       XMSS-MT                tree_index   leaf_index
 #    0-th layer:         6391030117691388          241 =>  16 85a91c6b80a1849f411d02ff73c1262a
 #    1-th layer:           12482480698615          508 =>  16 774a93c53745b203bc89c2ccedcc40bf
