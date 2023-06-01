@@ -545,13 +545,14 @@ def SPHINCS_Sign(pp, secret_seed, public_seed, public_root, msg, rand=None):
         rand = random.randbytes(n)   
     assert type(rand) == bytes and len(rand) == n
     (hashed_msg, mt_tree_idx, leaf_idx) = MHash(pp, public_seed + public_root, rand, msg)
-    print("        RANDOM:", " "*41, len(rand), rand.hex())
+    print("        Random:", " "*41, len(rand), rand.hex())
     print(f"Hashed Message: {mt_tree_idx:24} {leaf_idx:12}    ", len(hashed_msg), hashed_msg.hex())
     #assert type(hashed_msg) == bytes and len(hashed_msg) == n
     mt_addr = [0, mt_tree_idx, leaf_idx]
     fors_sig = FORS_Sign(pp, secret_seed, public_seed, hashed_msg, mt_addr)
     node = FORS_Verify(pp, public_seed, fors_sig, hashed_msg, mt_addr)
     print("          FORS:", " "*41, len(node), node.hex())
+    print("       XMSS-MT:               tree_index   leaf_index")
     xmss_mt_sig = XMSS_MT_Sign(pp, secret_seed, public_seed, node, mt_tree_idx, leaf_idx)
     return (rand, fors_sig, xmss_mt_sig)
 
@@ -563,11 +564,12 @@ def SPHINCS_Verify(pp, public_seed, public_root, signature, msg):
     (rand, fors_sig, xmss_mt_sig) = signature
     assert type(rand) == bytes and len(rand) == n
     (hashed_msg, mt_tree_idx, leaf_idx) = MHash(pp, public_seed + public_root, rand, msg)
-    print("        RANDOM:", " "*41, len(rand), rand.hex())
+    print("        Random:", " "*41, len(rand), rand.hex())
     print(f"Hashed Message: {mt_tree_idx:24} {leaf_idx:12}    ", len(hashed_msg), hashed_msg.hex())
     #assert type(hashed_msg) == bytes and len(hashed_msg) == n
     mt_addr = [0, mt_tree_idx, leaf_idx]
     node = FORS_Verify(pp, public_seed, fors_sig, hashed_msg, mt_addr)
     print("          FORS:", " "*41, len(node), node.hex())
+    print("       XMSS-MT:               tree_index   leaf_index")
     root = XMSS_MT_Verify(pp, public_seed, xmss_mt_sig, node, mt_tree_idx, leaf_idx)
     return root
