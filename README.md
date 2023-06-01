@@ -24,7 +24,6 @@ pp = (n, algo, robust, k, a, w, h, d)
 assert w in [4, 8]
     
 secret_seed = b"\xaa"*n
-#secret_prf = b"\xbb"*n
 public_seed = b"\xcc"*n
 
 public_root = SPHINCS_GeneratePulicKey(pp, secret_seed, public_seed)
