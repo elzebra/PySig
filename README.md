@@ -2,7 +2,7 @@
 signature shemes in python
 
 * pure python without any external dependencies
-* just copy and paste; no license
+* just copy and paste; no license; no installation
 * simple implementation for understanding not for performance
 
 ### SPHINCS+
